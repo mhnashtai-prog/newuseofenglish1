@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>B2 First - Use of English Part 2 (Interactive)</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 650px; margin: 2em auto; padding: 1em; background: #f9f9f9; }
+  h1 { font-size: 1.6em; }
+  p.instructions { font-weight: bold; }
+  .gap-input { width: 70px; padding: 3px 5px; font-size: 1em; margin: 0 3px; }
+  .text-block { background: white; padding: 1em; border-radius: 6px; border: 1px solid #ccc; margin-bottom: 1em; }
+  .buttons { margin-top: 1em; }
+  button { font-size: 1em; padding: 0.5em 1em; margin-right: 1em; cursor: pointer; }
+  #answers { margin-top: 1em; background: #e8f0fe; border: 1px solid #a3c1f7; padding: 1em; border-radius: 4px; display: none; }
+</style>
+</head>
+<body>
+
+<h1>B2 First – Use of English Part 2 (Interactive)</h1>
+
+<p class="instructions">
+For questions 9–16, read the text below and think of the word which best fits each gap.<br />
+Use only <strong>ONE word</strong> in each gap.<br />
+There is an example at the beginning (0), which is already filled in.
+</p>
+
+<div class="text-block">
+<p>
+In recent years, technology has made (0) <strong>it</strong> possible for millions of people to work from home. Many employees no longer need to be (9) 
+<input type="text" id="gap9" class="gap-input" autocomplete="off" /> the office every day, (10) 
+<input type="text" id="gap10" class="gap-input" autocomplete="off" /> allows them greater flexibility in managing their time. This change has been welcomed by those (11) 
+<input type="text" id="gap11" class="gap-input" autocomplete="off" /> value a better work-life balance, and it (12) 
+<input type="text" id="gap12" class="gap-input" autocomplete="off" /> also helped companies reduce costs.
+</p>
+
+<p>
+However, remote working is not without challenges. Some workers feel isolated from their colleagues, (13) 
+<input type="text" id="gap13" class="gap-input" autocomplete="off" /> can affect their motivation. Others struggle to separate work from personal life, particularly (14) 
+<input type="text" id="gap14" class="gap-input" autocomplete="off" /> they do not have a dedicated workspace. Employers, on the other hand, must ensure that tasks are completed on time and that communication remains clear.
+</p>
+
+<p>
+Experts believe that remote work (15) 
+<input type="text" id="gap15" class="gap-input" autocomplete="off" /> continue to grow in popularity, especially in industries (16) 
+<input type="text" id="gap16" class="gap-input" autocomplete="off" /> constant physical presence is not necessary.
+</p>
+</div>
+
+<div class="buttons">
+  <button onclick="showAnswers()">Show Answers</button>
+  <button onclick="resetAnswers()">🔄 Repeat</button>
+  <button onclick="alert('Feature coming soon: New Exercise with a different topic.')">🆕 New Exercise</button>
+</div>
+
+<div id="answers">
+<strong>Answer Key:</strong><br />
+0 it<br />
+9 in<br />
+10 which<br />
+11 who<br />
+12 has<br />
+13 which<br />
+14 if<br />
+15 will<br />
+16 where
+</div>
+
+<script>
+function showAnswers() {
+  document.getElementById('answers').style.display = 'block';
+  // Optionally fill inputs with correct answers:
+  const answers = {
+    gap9: 'in',
+    gap10: 'which',
+    gap11: 'who',
+    gap12: 'has',
+    gap13: 'which',
+    gap14: 'if',
+    gap15: 'will',
+    gap16: 'where'
+  };
+  for (const id in answers) {
+    const input = document.getElementById(id);
+    if (input && !input.value.trim()) {
+      input.value = answers[id];
+      input.style.color = '#555'; // Show answers in a slightly different color
+    }
+  }
+}
+
+function resetAnswers() {
+  document.getElementById('answers').style.display = 'none';
+  const inputs = document.querySelectorAll('.gap-input');
+  inputs.forEach(input => {
+    input.value = '';
+    input.style.color = '#000';
+  });
+}
+</script>
+
+</body>
+</html>
